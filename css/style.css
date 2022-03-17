@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-size: 1rem; */
 }
 :root{
     --bg-dark-blue:rgba(38, 51, 93, 1);
@@ -17,7 +18,7 @@
     --color-back-icon-azul-escuro: #B6D7FF;
 
 }
-ul, li, a,h1,p{
+ul, li, a,h1,p,h2,h3,h4,h5,p{
     text-decoration: none;
     list-style: none;
     padding: none;
@@ -25,20 +26,14 @@ ul, li, a,h1,p{
 }
 body{
     font-family: 'Montserrat', 'sans-serif';
+    transition: all 0.5s ease-in-out;
 }
 
-.container-header{
-    max-width: 966px;
-    width: 100%;
-    display: flex;
-    gap: 87px;
-    transition: all 0.2s ease-in-out;
-}
 header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 71px;
+    min-height: 71px;
     background-color: var(--bg-dark-blue);
     color: var(--text-color);
     padding: 19px 220px 0 195px;
@@ -51,18 +46,73 @@ header{
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    
+    flex: 1;
 }
 .logo a{
     color: var(--text-color);
     display: block; 
     padding: 3px;
 }
+#btn-mobile{
+    position: relative;
+    width: 30px;
+    max-height: 30px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    border-top: solid 4px rgb(255, 255, 255);
+    cursor: pointer;
+}
+#btn-mobile::before,#btn-mobile::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    display: block;
+    background-color:currentColor;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+.box-btn.active #btn-mobile{
+    border-top: 0;
+}
+.box-btn.active #btn-mobile::before{
+    transform: rotate(45deg);
+}
+.box-btn.active #btn-mobile::after{
+    top: -9px;
+    transform: rotate(-45deg);
+}
+.menu.active{
+    display: block;
+    position: absolute;
+    top: 71px;
+    width:100vw;
+    height: 100vh;
+    background-color: #26335D;
+    transition: all 0.3s ease-in-out;
+}
+.menu.active ul{
+    position: relative;
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+}
+.menu.active ul li{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.menu.active .btn-header{
+    margin: 30px auto;
+    justify-content: center;
+}
+
 .menu{
-    width: 738px;
+    /* min-width: 738px; */
     display: flex;
     align-items: center;
-    gap: 239px;
+    justify-content: space-around;
+    flex: 2;
+    transition: all 0.3s ease-in-out;
 }
 .menu .btn-header .btn-join-us{
     display: flex;
@@ -105,27 +155,30 @@ header{
 }
 .welcome{
     background: var(--bg-dark-blue);
-    height: 707px;
+    background-size: cover;
+    min-height: 707px;
+    /* padding: 10px; */
 }
-.welcome img{
-    max-width: 100%;
-}
+
 .center-content-welcome{
     max-width: 1280px;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* gap: 30px; */
     margin: 0 auto;
     transition: all 0.2s ease-in-out;
+    flex-wrap: wrap;
 }
 .text-welcome{
     display: flex;
+    width: 100%;
+    height: auto;
     flex-direction: column;
     gap: 30px;
     font-style: normal;
-    padding: 0 0 0 98px;
+    flex: 1.2;
+    padding-left: 20px;
+    padding-right: 60px;
 }
 .text-welcome span{
     font-size: 16px;
@@ -145,6 +198,11 @@ header{
     font-weight: 400;
     color: var(--text-color);
 }
+.btn-welcome{
+    display: flex;
+    max-width: 367px;
+    gap: 5px;
+}
 .text-welcome .btn-welcome button{
     border: none;
     padding: 15px 40px;
@@ -152,31 +210,41 @@ header{
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    
 }
 .text-welcome .btn-welcome button:nth-child(1){
     background: var(--primary-color);
     color: var(--text-color);
+    max-width: 195px;
 }
 .text-welcome .btn-welcome button:nth-child(2){
     background: none;
     border: solid 1px var(--primary-color);
     color: var(--primary-color);
-    
+    max-width: 165px;
 }
-
+.img-welcome{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-welcome img{
+    min-width: 80%;
+}
 /* Container que centralizar o conteúdo do site  */
 .center-main{
-    width: 100%;
     max-width: 1040px;
     margin: 112px auto;
     transition: all 0.2s ease-in-out;
 }
 /* </> */
 .most-popular{
-    height: 768px;
+    min-height: 768px;
 }
 .container-most-popular{
-    height: 768px;
+    min-height: 768px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -185,9 +253,18 @@ header{
 .cards{
     display: flex;
     justify-content: space-around;
-    /* overflow: hidden; */
+    flex-wrap: wrap;
+    flex:1;
+
+}
+.cards div{
+    flex:1;
+    max-width: 230px;
+    min-width: 230px;
 }
 .cards .box-card-text{
+    flex:1;
+    min-width: 230px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -254,7 +331,7 @@ header{
 
 /* seção 3 */
 .experts-teacher{
-    height: 919px;
+    min-height: 919px;
 }
 .container-cards-text-section{
     display: flex;
@@ -267,6 +344,7 @@ header{
     justify-content: space-between;
     margin-top: 112px;
     overflow: hidden;
+    gap: 20px;
 }
 .box-display-cards-experts-teacher .format-card-div{
     display: flex;
@@ -296,7 +374,9 @@ header{
 .box-display-cards-experts-teacher .format-card-div.product4 {
     background-image: url("../imagens/product-cover-4.png");
 }
-
+.box-display-cards-experts-teacher{
+    flex-wrap: wrap;
+}
 .box-display-cards-experts-teacher .sale{
     padding: 6.5px 10px;
     color: var(--text-color);
@@ -305,6 +385,14 @@ header{
     border-radius: 3px;
     font-weight: 700;
     font-size: 14px;
+}
+.box-card-most-baner-sale{
+    display: flex;
+    flex-direction: column;
+    min-width: 210px;
+    flex: 1; 
+    max-width: 230px;
+
 }
 .format-card-div div{
     margin: 0 auto;
@@ -400,12 +488,12 @@ header{
 .margin-160{
     margin: 160px auto;
 }
-
 .most-popular-courses{
-    background-color: var(--bg-dark-blue);
-    height: 919px;
+    background: var(--bg-dark-blue);
+    min-height: 919px;
     display: flex;
     align-items: center;
+    background-size: cover;
 }
 .container-flex-popular-courses{
     display: flex;
@@ -415,14 +503,21 @@ header{
 .popular-courses-main{
     max-width: 544px;
     width: 100%;
-    height: 599px;
-    object-fit: cover;
+    height: auto;
+    flex: 1;
+
+}
+.popular-courses-main img{
+    max-width: 100%;
+    min-width: 50%;
 }
 .text-container-popular-courses{
     padding: 0 35px 0 0;
     display: flex;
     flex-direction: column;
     gap: 35px;
+    flex: 1;
+    padding: 151px 35px 151px 120px;
 }
 .text-container-popular-courses h2{
     font-weight: 700;
@@ -443,7 +538,7 @@ header{
     color: var(--text-color);
     letter-spacing: 0.2px;
 }
-.text-container-popular-courses span{
+.text-container-popular-courses a{
     display: flex;
     align-items: center;
     text-align: center;
@@ -457,7 +552,7 @@ header{
 
 /* section newsletter */
 .our-expert-teacher-two{
-    height: 1471px;
+    min-height: 1471px;
 }
 .container-flex-expert-two{
     display: flex;
@@ -470,14 +565,16 @@ header{
 .box-baners-large{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 100%;
+    gap: 10px;
     position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .box-baner{
     background: rgba(255, 255, 255, 1);
     max-width: 330px;
-    width: 100%;
+    min-width: 330px;
     height: 937px;
     box-shadow: 0 0 10px #f7f7f7;
     padding: 50px 40px;
@@ -487,7 +584,8 @@ header{
     justify-content: space-around;
     
 }
-.box-baners-large::before{
+/* Before new */
+/* .box-baners-large::before{
     content: 'New';
     top: -29px;
     left: 610px;
@@ -503,7 +601,7 @@ header{
     font-size: 24px;
     color: var(--text-color);
     transition: 0.2s ease-in-out;
-}
+} */
 .box-baner img{
     max-width: 96px;
     width: 100%;
@@ -559,19 +657,10 @@ header{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.section-text-default{
+    flex: 1;
+    padding-right: 40px;
+}
 
 .section-text-default h2,p{
     margin-top: 15px;
@@ -588,16 +677,13 @@ header{
 }
 
 
-@media(min-width: 1600px){
+@media(min-width: 1400px){
     .center-main{
-        max-width: 1400px;
+        max-width: 1050px;
     }
     .container-header{
         max-width:1347px ;
         justify-content: space-around;
-    }
-    .center-content-welcome{
-        max-width: 1546px;
     }
     .cards{
         justify-content: space-between;
@@ -607,5 +693,99 @@ header{
     }
     .box-baners-large::before{
         left: 800px;
+    }
+    .text-card-product{
+        padding: 8px 0 3px 0;
+    }
+}
+
+@media(max-width:1075px){
+    .text-card-product{
+        padding: 8px 0 3px 0;
+    }
+    .box-display-cards-experts-teacher{
+        justify-items: center;
+        justify-content: center;
+    }
+    .welcome{
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .center-main{
+        margin: 112px 30px;
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        flex-wrap: wrap;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container-most-popular{
+        gap: 100px;
+        justify-items: center;
+    }
+    .cards{
+        justify-items: center;
+    }
+
+}
+@media(max-width:970px){
+    .logo, #btn-mobile{
+        display: block;
+    }
+    header{
+        padding: 20px;
+    }
+    .menu{
+        display: none;
+    }
+    .container-header{
+        gap: 100px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .container-flex-popular-courses{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .most-popular-courses{
+        flex-direction: column;
+    }
+}
+@media(max-width: 594px){
+    .text-welcome{
+        padding: 0;
+    }
+    .cards{
+        grid-template-columns: 1fr;
+        max-width: 230px;
+        margin: 0 auto;
+    }
+    .text-welcome h1{
+        font-size: 50px;
+    }
+    .text-welcome p{
+        font-size: 18px;
+    }
+    .cards .box-card-text-orange{
+        margin-top: 48px;
+    }
+    .text-container-popular-courses{
+        padding: 10px 10px 50px 0;
+    }
+}
+@media(max-width: 494px){
+    .btn-welcome{
+        flex-direction: column;
+    }
+    .text-welcome h1{
+        font-size: 40px;
+    }
+
+    .text-welcome p{
+        font-size: 16px;
     }
 }
