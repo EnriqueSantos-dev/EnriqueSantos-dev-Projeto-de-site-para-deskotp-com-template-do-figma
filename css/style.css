@@ -814,6 +814,7 @@ header{
     width: 100%;
     border: none;
     padding: 20px;
+    outline: none;
 }
 .search input{
     flex: 1;
@@ -1047,7 +1048,7 @@ address .flex-address-links i{
         padding: 20px 0 20px 50px;
     }
 }
-@media(max-width: 494px) and (min-width:310px){
+@media(max-width: 494px) and (min-width:220px){
     .btn-welcome{
         flex-direction: column;
     }
@@ -1065,21 +1066,34 @@ address .flex-address-links i{
     .box-baner{
         min-width: 200px;
         margin: 0 auto;
+        padding: 6px;
     }
     .testimoniais{
         flex-direction: column;
     }
     .descri{
-        min-width: 270px;
+        min-width: 150px;
         gap: 30px;
     }
     .descri p{
         padding: 1px;
     }
     .center-footer-especial{
-        margin: 50px 30px;
+        margin: 50px 20px;
+    }
+    .copy{
+        font-size: 12px;
+        padding: 3px 0 3px 3px;
+    }
+    .section-text-default h2{
+        font-size: 31px;
+    }
+    .text-newsletter h3{
+        font-weight: 700;
+        font-size: 38px;
     }
 }
+
 
 @keyframes menu-animated{
     to{
