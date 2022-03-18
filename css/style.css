@@ -611,24 +611,26 @@ header{
     justify-content: space-around;
     
 }
-/* Before new */
-/* .box-baners-large::before{
-    content: 'New';
-    top: -29px;
-    left: 610px;
+.box-baner:nth-child(2){
+    position: relative;
+}
+.box-baner:nth-child(2)::before{
     position: absolute;
-    width: 89px;
-    height: 90px;
-    background: #E77C40;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
+    content: 'New';
+    border-radius:50% ;
+    width: 89px;
+    height: 89px;
+    right: -10px;
+    background-color: #E74040;
     font-size: 24px;
-    color: var(--text-color);
-    transition: 0.2s ease-in-out;
-} */
+    font-weight: bold;
+    color: #fff;
+    top: -30px;
+}
+
 .box-baner img{
     max-width: 96px;
     width: 100%;
@@ -898,11 +900,26 @@ footer address{
     font-weight: 700;
     font-size: 14px;
     padding: 20px 195px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .copy p{
+    flex:2;
     color: #737373;
 }
-
+.copy .icons-links-copy{
+    display: flex;
+    font-size: 24px;
+    flex: 1;
+}
+.copy .icons-links-copy a{
+    cursor: pointer;
+    padding: 4px;
+    flex: 1;
+}
+.copy .icons-links-copy a:nth-child(2){
+    margin: 0 20px 0 20px;
+}
 address{
     display: flex;
     flex-direction: column;
@@ -1009,6 +1026,12 @@ address .flex-address-links i{
     .most-popular-courses{
         flex-direction: column;
     }
+    .box-baners-large{
+        gap: 30px;
+    }
+    .copy{
+        padding: 20px;
+    }
 }
 @media(max-width: 594px){
     header{
@@ -1045,8 +1068,9 @@ address .flex-address-links i{
         gap: 30px;
     }
     .copy{
-        padding: 20px 0 20px 50px;
+        flex-direction: column-reverse;
     }
+
 }
 @media(max-width: 494px) and (min-width:220px){
     .btn-welcome{
@@ -1081,10 +1105,7 @@ address .flex-address-links i{
     .center-footer-especial{
         margin: 50px 20px;
     }
-    .copy{
-        font-size: 12px;
-        padding: 3px 0 3px 3px;
-    }
+
     .section-text-default h2{
         font-size: 31px;
     }
@@ -1092,6 +1113,25 @@ address .flex-address-links i{
         font-weight: 700;
         font-size: 38px;
     }
+    .box-baner:nth-child(2){
+        margin-top: 10px;
+    }
+    .box-baner:nth-child(2)::before{
+        width: 69px;
+        height: 69px;
+        font-size: 18px;
+    }
+    .copy{
+        gap: 30px;
+    }
+    .copy p{
+        text-align: center;
+        font-size: 10px;
+    }
+    .icons-links-copy a{
+        text-align: center;
+    }
+    
 }
 
 
