@@ -1060,6 +1060,7 @@ address .flex-address-links i{
     }
     .box-baners-large{
         max-width: 270px;
+        margin: 0 auto;
     }
     .box-baner{
         min-width: 200px;
