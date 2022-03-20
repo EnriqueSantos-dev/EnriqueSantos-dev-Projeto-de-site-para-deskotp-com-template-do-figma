@@ -1,2 +1,2 @@
-# EnriqueSantos-dev-Projeto-de-site-para-deskotp-com-template-do-figma
-Nesse projeto eu construi um website completo usando o flex-box, posso dizer que o site se comporta até bem para monitores com resolução máxima de full-hd, o site não é resposivo para mobile, até pq eu o fiz baseado em um template do FIgma, template esse que não contava com um layout responsivo, então dei um jeitinho para deixar a experiência no desktop legal.
+# Projeto de site responsivo com HTML, CSS3 e JavaScript.
+
